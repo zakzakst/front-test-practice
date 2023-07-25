@@ -1,5 +1,6 @@
 /** @type {import('ts-jest').JestConfigWithTsJest} */
 module.exports = {
-  preset: 'ts-jest',
-  testEnvironment: 'node',
+  testEnvironment: 'jest-environment-jsdom',
+  transform: { '^.+\\.(ts|tsx)$': ['esbuild-jest', { sourcemap: true }] },
+  setupFilesAfterEnv: ['./jest.setup.ts'],
 };
