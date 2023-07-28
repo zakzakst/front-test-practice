@@ -1,5 +1,5 @@
-import { render, screen, within } from '@testing-library/react';
-import { ArticleList } from './ArticleList';
+import { render, screen, within } from '@testing-library/react'
+import { ArticleList } from './ArticleList'
 import { items } from './fixture'
 
 test('タイトルの表示', () => {
