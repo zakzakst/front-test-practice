@@ -29,3 +29,19 @@ test('主要エリアが表示されている', () => {
     screen.getByRole('button', { name: 'サインアップ' })
   ).toBeInTheDocument()
 })
+
+test('「サインアップ」ボタンは非活性', () => {
+  render(<Form />)
+  expect(screen.getByRole('button', { name: 'サインアップ' })).toBeDisabled()
+})
+
+test('「利用規約の同意」チェックボックスを押下すると「サインアップ」ボタンは活性化', async () => {
+  render(<Form />)
+  await user.click(screen.getByRole('checkbox'))
+  expect(screen.getByRole('button', { name: 'サインアップ' })).toBeEnabled()
+})
+
+test('Snapshot: 新規アカウント登録フォームが表示される', () => {
+  const { container } = render(<Form />)
+  expect(container).toMatchSnapshot()
+})
