@@ -7,7 +7,8 @@
   "license": "MIT",
   "scripts": {
     "test": "jest",
-    "coverage": "start coverage/lcov-report/index.html"
+    "coverage": "start coverage/lcov-report/index.html",
+    "reports": "start __reports__/jest.html"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.17.0",
